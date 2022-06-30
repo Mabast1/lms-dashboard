@@ -3,6 +3,7 @@ import {
   MdDashboard,
   MdOutlinePlayLesson,
   MdOutlineFeedback,
+  MdOutlineSpaceDashboard,
 } from "react-icons/md";
 import {
   BiBookAlt,
@@ -19,7 +20,7 @@ export const links = [
     links: [
       {
         name: "dashboard",
-        icon: <MdDashboard />,
+        icon: <MdOutlineSpaceDashboard />,
       },
     ],
   },

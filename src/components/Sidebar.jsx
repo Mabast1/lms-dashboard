@@ -1,7 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { MdDashboard, MdAnalytics, MdOutlineCancel } from "react-icons/md";
-import { AiOutlineMenu } from "react-icons/ai";
+
+import {
+  TbLayoutSidebarLeftCollapse,
+  TbLayoutSidebarLeftExpand,
+} from "react-icons/tb";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { links } from "../data/data";
@@ -11,29 +14,29 @@ const Sidebar = () => {
   const activeMenu = true;
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
+    "flex items-center bg-light-gray gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 text-black";
   const normalLink =
     "flex text-slate-50 items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-300 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2 hover:text-black";
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto pb-10">
+    <div className="ml-3 mr-3 h-screen md:overflow-hidden overflow-auto pb-10">
       {activeMenu && (
         <>
-          <div className="flex justify-center items-center">
-            <Link
+          <div className="flex justify-start items-start">
+            {/* <Link
               to="/"
               onClick={() => {}}
-              className="items-center gap-3 mt-4 flex text-xl font-extrabold tracking-tight w-20"
+              className="items-start gap-3 mt-4 flex text-xl font-extrabold tracking-tight w-20"
             >
               <img src={logo} alt="logo" />
-            </Link>
-            <TooltipComponent content="Menu" position="BottomCenter">
+            </Link> */}
+            <TooltipComponent content="Menu" position="RightCenter">
               <button
                 type="button"
-                className="text-xl text-purple-200 hover:text-purple-800 rounded-full p-3 hover:bg-light-gray mt-4 block"
+                className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
                 onClick={() => {}}
               >
-                <AiOutlineMenu />
+                <TbLayoutSidebarLeftCollapse />
               </button>
             </TooltipComponent>
           </div>

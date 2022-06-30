@@ -28,7 +28,7 @@ const App = () => {
   const activeMenu = true;
 
   return (
-    <div className="underline text-3xl">
+    <div>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4">
@@ -43,7 +43,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-[#1d2327]">
               <Sidebar />
             </div>
           ) : (

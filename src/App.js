@@ -4,6 +4,19 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { registerLicense } from "@syncfusion/ej2-base";
 
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import {
+  Dashboard,
+  Courses,
+  Calendar,
+  Profile,
+  CodeCh,
+  Feedback,
+  Lessons,
+  Organizations,
+  Resources,
+} from "./pages";
+
 import "./App.css";
 
 // Registering Syncfusion license key
@@ -31,7 +44,7 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
-              Sidebar
+              <Sidebar />
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">Sidebar - 0</div>
@@ -42,29 +55,29 @@ const App = () => {
             }`}
           >
             <div className="navbar fixed md:static bg-main-bg dark:bg-main-dark-bg ">
-              Navbar
+              <Navbar />
             </div>
           </div>
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element="Dashboard" />
-              <Route path="/dashboard" element="Dashboard" />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
 
               {/* Pages */}
-              <Route path="/profile" element="My Profile" />
-              <Route path="/courses" element="My Courses" />
-              <Route path="/lessons" element="All Lessons" />
-              <Route path="/organizations" element="My Organizations" />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/lessons" element={<Lessons />} />
+              <Route path="/organizations" element={<Organizations />} />
 
               {/* Apps & Resources */}
-              <Route path="/resources" element="Resources" />
-              <Route path="/calendar" element="My Calendar" />
-              <Route path="/codechampions" element="Code Codechampions" />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/codechampions" element={<CodeCh />} />
 
               {/* Misc */}
               <Route path="/knowledgebase" element="knowledge Base" />
-              <Route path="/feedback" element="Feedback" />
+              <Route path="/feedback" element={<Feedback />} />
             </Routes>
           </div>
         </div>

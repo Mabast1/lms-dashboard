@@ -34,9 +34,9 @@ const SmallSidebar = () => {
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="m-3">
+                <div className="m-3">
                   <div className="border-b-1 border-gray-500" />
-                </p>
+                </div>
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.path}`}

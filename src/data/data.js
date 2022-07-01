@@ -46,17 +46,12 @@ export const links = [
     ],
   },
   {
-    title: "Apps & Recourses",
+    title: "Apps",
     links: [
       {
         name: "My Calendar",
         path: "calendar",
         icon: <BiCalendarEvent />,
-      },
-      {
-        name: "Resources",
-        path: "resources",
-        icon: <BiFolder />,
       },
       {
         name: "Code Champions",
@@ -68,6 +63,11 @@ export const links = [
   {
     title: "Misc",
     links: [
+      {
+        name: "Resources",
+        path: "resources",
+        icon: <BiFolder />,
+      },
       {
         name: "Knowledge Base",
         path: "knowledgebase",

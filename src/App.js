@@ -77,12 +77,12 @@ const App = () => {
               <Route path="/lessons" element={<Lessons />} />
               <Route path="/organizations" element={<Organizations />} />
 
-              {/* Apps & Resources */}
-              <Route path="/resources" element={<Resources />} />
+              {/* Apps */}
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/codechampions" element={<CodeCh />} />
 
               {/* Misc */}
+              <Route path="/resources" element={<Resources />} />
               <Route path="/knowledgebase" element="knowledge Base" />
               <Route path="/feedback" element={<Feedback />} />
             </Routes>

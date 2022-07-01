@@ -29,15 +29,18 @@ export const links = [
     title: "Pages",
     links: [
       {
-        name: "profile",
+        name: "my profile",
+        path: "profile",
         icon: <BiUser />,
       },
       {
-        name: "courses",
+        name: "my courses",
+        path: "courses",
         icon: <BiBookAlt />,
       },
       {
-        name: "lessons",
+        name: "all lessons",
+        path: "lessons",
         icon: <MdOutlinePlayLesson />,
       },
     ],
@@ -46,15 +49,18 @@ export const links = [
     title: "Apps & Recourses",
     links: [
       {
-        name: "calendar",
+        name: "my calendar",
+        path: "calendar",
         icon: <BiCalendarEvent />,
       },
       {
         name: "resources",
+        path: "resources",
         icon: <BiFolder />,
       },
       {
         name: "code champions",
+        path: "codechampions",
         icon: <BiCodeBlock />,
       },
     ],
@@ -63,11 +69,13 @@ export const links = [
     title: "Misc",
     links: [
       {
-        name: "knowledgebase",
+        name: "knowledge base",
+        path: "knowledgebase",
         icon: <BiHelpCircle />,
       },
       {
         name: "feedback",
+        path: "feedback",
         icon: <MdOutlineFeedback />,
       },
     ],

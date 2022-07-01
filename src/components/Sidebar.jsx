@@ -1,11 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import ReactToolTip from "react-tooltip";
 import {
   TbLayoutSidebarLeftCollapse,
   TbLayoutSidebarLeftExpand,
 } from "react-icons/tb";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { links } from "../data/data";
 import logo from "../data/logo.jpg";
@@ -30,15 +29,16 @@ const Sidebar = () => {
             >
               <img src={logo} alt="logo" />
             </Link> */}
-            <TooltipComponent content="Menu" position="RightCenter">
-              <button
-                type="button"
-                className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
-                onClick={() => {}}
-              >
-                <TbLayoutSidebarLeftCollapse />
-              </button>
-            </TooltipComponent>
+            <button
+              type="button"
+              data-tip="Menu"
+              data-type="light"
+              className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
+              onClick={() => {}}
+            >
+              <TbLayoutSidebarLeftCollapse />
+            </button>
+            <ReactToolTip place="right" />
           </div>
           <div className="mt-10">
             {links.map((item) => (

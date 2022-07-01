@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import ReactToolTip from "react-tooltip";
 import { registerLicense } from "@syncfusion/ej2-base";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
@@ -32,15 +32,15 @@ const App = () => {
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4">
-            <TooltipComponent content="Settings" position="Top">
-              <button
-                type="button"
-                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: "Black", borderRadius: "50%" }}
-              >
-                <FiSettings />
-              </button>
-            </TooltipComponent>
+            <button
+              type="button"
+              data-tip="Settings"
+              className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+              style={{ background: "Black", borderRadius: "50%" }}
+            >
+              <FiSettings />
+            </button>
+            <ReactToolTip />
           </div>
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-[#1d2327]">

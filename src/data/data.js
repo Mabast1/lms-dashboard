@@ -20,6 +20,7 @@ export const links = [
     links: [
       {
         name: "dashboard",
+        path: "dashboard",
         icon: <MdOutlineSpaceDashboard />,
       },
     ],

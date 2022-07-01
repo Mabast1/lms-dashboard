@@ -7,7 +7,6 @@ import {
 } from "react-icons/tb";
 
 import { links } from "../data/data";
-import logo from "../data/logo.jpg";
 
 const Sidebar = () => {
   const activeMenu = true;

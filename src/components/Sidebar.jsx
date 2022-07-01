@@ -21,13 +21,6 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-start items-start">
-            {/* <Link
-              to="/"
-              onClick={() => {}}
-              className="items-start gap-3 mt-4 flex text-xl font-extrabold tracking-tight w-20"
-            >
-              <img src={logo} alt="logo" />
-            </Link> */}
             <button
               type="button"
               data-tip="Menu"

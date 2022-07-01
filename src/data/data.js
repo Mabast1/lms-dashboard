@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  MdDashboard,
   MdOutlinePlayLesson,
   MdOutlineFeedback,
   MdOutlineSpaceDashboard,
@@ -19,7 +18,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "dashboard",
+        name: "Dashboard",
         path: "dashboard",
         icon: <MdOutlineSpaceDashboard />,
       },
@@ -30,17 +29,17 @@ export const links = [
     title: "Pages",
     links: [
       {
-        name: "my profile",
+        name: "My Profile",
         path: "profile",
         icon: <BiUser />,
       },
       {
-        name: "my courses",
+        name: "My Courses",
         path: "courses",
         icon: <BiBookAlt />,
       },
       {
-        name: "all lessons",
+        name: "All Lessons",
         path: "lessons",
         icon: <MdOutlinePlayLesson />,
       },
@@ -50,17 +49,17 @@ export const links = [
     title: "Apps & Recourses",
     links: [
       {
-        name: "my calendar",
+        name: "My Calendar",
         path: "calendar",
         icon: <BiCalendarEvent />,
       },
       {
-        name: "resources",
+        name: "Resources",
         path: "resources",
         icon: <BiFolder />,
       },
       {
-        name: "code champions",
+        name: "Code Champions",
         path: "codechampions",
         icon: <BiCodeBlock />,
       },
@@ -70,12 +69,12 @@ export const links = [
     title: "Misc",
     links: [
       {
-        name: "knowledge base",
+        name: "Knowledge Base",
         path: "knowledgebase",
         icon: <BiHelpCircle />,
       },
       {
-        name: "feedback",
+        name: "Feedback",
         path: "feedback",
         icon: <MdOutlineFeedback />,
       },

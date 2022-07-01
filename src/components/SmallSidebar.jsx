@@ -9,13 +9,13 @@ import {
 import { links } from "../data/data";
 import logo from "../data/logo.jpg";
 
-const Sidebar = () => {
+const SmallSidebar = () => {
   const activeMenu = true;
 
   const activeLink =
-    "flex items-center bg-light-gray gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 text-black";
+    "flex items-center justify-center bg-light-gray p-3 rounded-lg text-white text-md mt-2 text-black";
   const normalLink =
-    "flex text-slate-50 items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-300 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2 hover:text-black";
+    "flex text-slate-50 items-center justify-center p-3 rounded-lg text-md text-gray-300 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray mt-2 hover:text-black";
 
   return (
     <div className="pl-3 pr-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-[#1d2327] dark:bg-secondary-dark-bg">
@@ -32,18 +32,19 @@ const Sidebar = () => {
             <button
               type="button"
               data-tip="Menu"
-              data-type="light"
               className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
               onClick={() => {}}
             >
-              <TbLayoutSidebarLeftCollapse />
+              <TbLayoutSidebarLeftExpand />
             </button>
             <ReactToolTip place="right" effect="solid" />
           </div>
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 mt-4 uppercase m-3">{item.title}</p>
+                <p className="m-3">
+                  <div className="border-b-1 border-gray-500" />
+                </p>
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.path}`}
@@ -52,11 +53,12 @@ const Sidebar = () => {
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
+                    data-tip={link.name}
                   >
-                    <span className="text-xl">{link.icon}</span>{" "}
-                    <span className="capitalize">{link.name}</span>
+                    <span className="text-xl">{link.icon}</span>
                   </NavLink>
                 ))}
+                <ReactToolTip place="right" effect="solid" />
               </div>
             ))}
           </div>
@@ -66,4 +68,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SmallSidebar;

@@ -4,7 +4,13 @@ import { FiSettings } from "react-icons/fi";
 import ReactToolTip from "react-tooltip";
 import { registerLicense } from "@syncfusion/ej2-base";
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import {
+  Navbar,
+  Footer,
+  Sidebar,
+  SmallSidebar,
+  ThemeSettings,
+} from "./components";
 import {
   Dashboard,
   Courses,
@@ -16,7 +22,6 @@ import {
   Organizations,
   Resources,
 } from "./pages";
-
 import "./App.css";
 
 // Registering Syncfusion license key
@@ -25,7 +30,7 @@ registerLicense(
 );
 
 const App = () => {
-  const activeMenu = true;
+  const activeMenu = false;
 
   return (
     <div>
@@ -40,14 +45,16 @@ const App = () => {
             >
               <FiSettings />
             </button>
-            <ReactToolTip />
+            <ReactToolTip effect="solid" backgroundColor="#1d2327" />
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-[#1d2327]">
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">Sidebar - 0</div>
+            <div className="w-20 dark:bg-secondary-dark-bg">
+              <SmallSidebar />
+            </div>
           )}
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${

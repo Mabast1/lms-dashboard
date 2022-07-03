@@ -62,10 +62,10 @@ const Navbar = () => {
         >
           <img src={profile} className="rounded-full w-9 h-9" alt="avatar" />
           <p>
-            <span className="text-gray-400 text-16">Hi, </span>
-            <span className="text-gray-400 font-bold ml-1 text-16">Mabast</span>
+            <span className="text-gray-600 text-16">Hi, </span>
+            <span className="text-gray-600 font-bold ml-1 text-16">Mabast</span>
           </p>
-          <MdKeyboardArrowDown className="text-gray-400 text-16" />
+          <MdKeyboardArrowDown className="text-gray-600 text-16" />
         </div>
         <ReactToolTip place="Bottom" />
 

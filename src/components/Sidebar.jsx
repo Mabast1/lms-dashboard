@@ -24,7 +24,7 @@ const Sidebar = () => {
           <div className="flex justify-start items-start">
             <button
               type="button"
-              data-tip="Menu"
+              data-tip="Menu Close"
               data-type="light"
               className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
               onClick={() => setActiveMenu(false)}
@@ -42,7 +42,7 @@ const Sidebar = () => {
                     to={`/${link.path}`}
                     key={links.name}
                     onClick={() =>
-                      setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                      setActiveMenu((prevActiveMenu) => prevActiveMenu)
                     }
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink

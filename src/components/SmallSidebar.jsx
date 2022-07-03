@@ -8,9 +8,10 @@ import {
 
 import { links } from "../data/data";
 import { useStateContext } from "../context/ContextProvider";
+import { act } from "react-dom/test-utils";
 
 const SmallSidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { smallActiveMenu, setSmallActiveMenu } = useStateContext();
 
   const activeLink =
     "flex items-center justify-center bg-light-gray p-3 rounded-lg text-white text-md mt-2 text-black";
@@ -19,14 +20,14 @@ const SmallSidebar = () => {
 
   return (
     <div className="pl-3 pr-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-[#1d2327] dark:bg-secondary-dark-bg">
-      {activeMenu && (
+      {smallActiveMenu && (
         <>
           <div className="flex justify-start items-start">
             <button
               type="button"
               data-tip="Menu"
               className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
-              onClick={() => {}}
+              onClick={() => setSmallActiveMenu(false)}
             >
               <TbLayoutSidebarLeftExpand />
             </button>
@@ -42,7 +43,7 @@ const SmallSidebar = () => {
                   <NavLink
                     to={`/${link.path}`}
                     key={links.name}
-                    onClick={() => {}}
+                    onClick={(prevSmallActiveMenu) => !prevSmallActiveMenu}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }

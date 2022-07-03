@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -9,7 +8,6 @@ import { Link } from "react-router-dom";
 import profile from "../data/profile.png";
 import logo from "../data/logo.jpg";
 import { Chat, Notification, UserProfile } from ".";
-import { useStateContext } from "../context/ContextProvider";
 
 const NavButton = ({ title, customFun, icon, color, dotColor }) => (
   <>
@@ -18,30 +16,60 @@ const NavButton = ({ title, customFun, icon, color, dotColor }) => (
       data-tip={title}
       style={{ color }}
       onClick={customFun}
-      className=" relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
     >
       <span
         style={{ background: color }}
-        className=" absolute inline-flex rounded-full h-2 w-2 right-2 top-2 "
+        className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
       >
         {icon}
       </span>
     </button>
-    <ReactToolTip place="right" effect="solid" />
+    <ReactToolTip effect="solid" />
   </>
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const handleClick = () => {};
 
   return (
     <>
-      <div className=" flex justify-between p-2 md:mx-6 relative w-24">
+      <div className="flex justify-between p-2 md:px-7 relative h-16 bg-white">
         <Link to="./">
-          <img src={logo} alt="logo" className="-my-2" />
+          <img src={logo} alt="logo" className="-my-2 w-20" />
         </Link>
+        <div className="flex">
+          <NavButton
+            title="Chat"
+            customFunc={() => handleClick("chat")}
+            color="black"
+            dotColor="black"
+            icon={<BsChatLeft />}
+          />
+          <NavButton
+            title="Notification"
+            customFunc={() => handleClick("notification")}
+            color="black"
+            dotColor="black"
+            icon={<RiNotification3Line />}
+          />
+          <div
+            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            onClick={() => handleClick("userProfile")}
+            data-tip="Profile"
+          >
+            <img src={profile} className="rounded-full w-8 h-8" alt="avatar" />
+            <p>
+              <span className="text-gray-400 text-14">Hi, </span>
+              <span className="text-gray-400 font-bold ml-1 text-14">
+                Mabast
+              </span>
+            </p>
+            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+          </div>
+          <ReactToolTip place="Bottom" />
+        </div>
       </div>
-      <NavButton title="Chat" />
     </>
   );
 };

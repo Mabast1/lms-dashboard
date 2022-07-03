@@ -11,7 +11,8 @@ import { useStateContext } from "../context/ContextProvider";
 import { act } from "react-dom/test-utils";
 
 const SmallSidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, smallActiveMenu, setSmallActiveMenu } =
+    useStateContext();
 
   const activeLink =
     "flex items-center justify-center bg-light-gray p-3 rounded-lg text-white text-md mt-2 text-black";
@@ -20,7 +21,7 @@ const SmallSidebar = () => {
 
   return (
     <div className="pl-3 pr-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-[#1d2327] dark:bg-secondary-dark-bg">
-      {!activeMenu && (
+      {smallActiveMenu && (
         <>
           <div className="flex justify-start items-start">
             <button
@@ -43,7 +44,7 @@ const SmallSidebar = () => {
                   <NavLink
                     to={`/${link.path}`}
                     key={links.name}
-                    onClick={(prevActiveMenu) => !prevActiveMenu}
+                    onClick={(prevSmallActiveMenu) => !prevSmallActiveMenu}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }

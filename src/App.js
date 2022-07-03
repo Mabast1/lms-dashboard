@@ -31,7 +31,7 @@ registerLicense(
 );
 
 const App = () => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, smallActiveMenu } = useStateContext();
 
   return (
     <div>
@@ -52,17 +52,19 @@ const App = () => {
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar />
             </div>
-          ) : (
+          ) : smallActiveMenu ? (
             <div className="w-20 dark:bg-secondary-dark-bg">
               <SmallSidebar />
             </div>
+          ) : (
+            <div></div>
           )}
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? "md:ml-72" : " flex-2"
             }`}
           >
-            <div className="navbar fixed md:static bg-main-bg dark:bg-main-dark-bg ">
+            <div className="navbar static bg-main-bg dark:bg-main-dark-bg ">
               <Navbar />
             </div>
           </div>

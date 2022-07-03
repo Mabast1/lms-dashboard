@@ -23,6 +23,7 @@ import {
   Resources,
 } from "./pages";
 import "./App.css";
+import { useStateContext } from "./context/ContextProvider";
 
 // Registering Syncfusion license key
 registerLicense(
@@ -30,7 +31,7 @@ registerLicense(
 );
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>

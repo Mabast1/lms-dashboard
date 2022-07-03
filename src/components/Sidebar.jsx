@@ -7,9 +7,10 @@ import {
 } from "react-icons/tb";
 
 import { links } from "../data/data";
+import { useStateContext } from "../context/ContextProvider";
 
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink =
     "flex items-center bg-light-gray gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 text-black";
@@ -26,7 +27,7 @@ const Sidebar = () => {
               data-tip="Menu"
               data-type="light"
               className="text-2xl text-purple-100 hover:text-[#6051bb] rounded-full p-3 hover:bg-light-gray mt-4 ml-2 block"
-              onClick={() => {}}
+              onClick={() => setActiveMenu(false)}
             >
               <TbLayoutSidebarLeftCollapse />
             </button>
@@ -40,7 +41,9 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.path}`}
                     key={links.name}
-                    onClick={() => {}}
+                    onClick={() =>
+                      setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                    }
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }

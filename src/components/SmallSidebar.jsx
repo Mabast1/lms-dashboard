@@ -7,9 +7,10 @@ import {
 } from "react-icons/tb";
 
 import { links } from "../data/data";
+import { useStateContext } from "../context/ContextProvider";
 
 const SmallSidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink =
     "flex items-center justify-center bg-light-gray p-3 rounded-lg text-white text-md mt-2 text-black";

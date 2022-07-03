@@ -1,10 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import ReactToolTip from "react-tooltip";
-import {
-  TbLayoutSidebarLeftCollapse,
-  TbLayoutSidebarLeftExpand,
-} from "react-icons/tb";
+import { TbLayoutSidebarLeftCollapse } from "react-icons/tb";
 
 import { links } from "../data/data";
 import { useStateContext } from "../context/ContextProvider";

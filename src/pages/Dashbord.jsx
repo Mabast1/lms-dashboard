@@ -48,16 +48,15 @@ const Dashbord = () => {
               className=" flex flex-col 2xl:w-72 bg-white drop-shadow-sm dark:text-gray-200 dark:bg-secondary-dark-bg md:w-80 p-1 pt-5 rounded-2xl"
             >
               <div className="flex mb-4 items-center gap-5 px-4">
-                <button
-                  type="button"
+                <div
                   style={{
                     color: item.iconColor,
                     backgroundColor: item.iconBg,
                   }}
-                  className="text-2xl rounded-full p-4 hover:drop-shadow-xl"
+                  className="text-2xl rounded-full p-4 "
                 >
                   {item.icon}
-                </button>
+                </div>
                 <div>
                   <p className="text-lg">
                     <span>{item.count}</span>

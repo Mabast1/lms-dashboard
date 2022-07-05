@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button } from "../components";
-import Profile from "./Profile";
+import { dashboardButtons } from "../data/data";
 
 const Dashbord = () => {
   return (
@@ -40,6 +40,7 @@ const Dashbord = () => {
             </div>
           </div>
         </div>
+        <div className="flex w-full m-3 flex-wrap justify-center gap-3 items-center"></div>
       </div>
     </div>
   );

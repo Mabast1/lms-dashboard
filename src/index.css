@@ -6,6 +6,22 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+:root {
+  --font-base: "DM Sans", sans-serif;
+
+  --primary-color: #6051bb;
+  --primary2-color: #e2e102;
+  --secondary-color: #ff568d;
+  --secondary2-color: #fd9e35;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --white-color: #ffffff;
+  --blue-color: #05d7ca;
+  --green-color: #57e44a;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

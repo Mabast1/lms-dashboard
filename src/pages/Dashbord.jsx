@@ -27,7 +27,7 @@ const Dashbord = () => {
                       </p>
                     </div>
                   </div>
-                  <div>
+                  <div className="md:mt-3">
                     <Button
                       color="white"
                       bgColor={"#614fff"}

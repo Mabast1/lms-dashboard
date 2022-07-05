@@ -9,7 +9,7 @@ const Dashbord = () => {
       <div className="flex flex-wrap lg:flex-wrap justify-center">
         <div className="bg-white overflow-y-hidden m-3 rounded-xl">
           <div className="w-full flex justify-center">
-            <div className="w-full p-8" style={{ backgroundColor: "purple" }}>
+            <div className="w-full p-8" style={{ backgroundColor: "#614dbc" }}>
               <div>
                 <div className="flex flex-wrap flex-row items-center justify-evenly md:flex-row ">
                   <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
@@ -29,7 +29,7 @@ const Dashbord = () => {
                   <div className="mt-6">
                     <Button
                       color="white"
-                      bgColor={"white"}
+                      bgColor={"#614fff"}
                       text="Go to Training & Knowledge Base"
                       borderRadius="10px"
                       size="md"

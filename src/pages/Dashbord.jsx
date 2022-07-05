@@ -11,7 +11,7 @@ const Dashbord = () => {
           <div className="w-full flex justify-center">
             <div className="w-full p-8" style={{ backgroundColor: "purple" }}>
               <div>
-                <div className="flex flex-wrap items-center justify-evenly md:flex-row flex-col-reverse">
+                <div className="flex flex-wrap flex-row items-center justify-evenly md:flex-row ">
                   <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
                     <div className="text-center">
                       <p className=" text-xl italic text-gray-200">
@@ -26,18 +26,15 @@ const Dashbord = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-                {/* <div className="md:w-1/4 w-2/3">
-                  <img src={Profile} alt="cartoon avatars" />
-                </div> */}
-                <div className="mt-6">
-                  <Button
-                    color="white"
-                    bgColor={"#fff"}
-                    text="Download"
-                    borderRadius="10px"
-                    size="md"
-                  />
+                  <div className="mt-6">
+                    <Button
+                      color="white"
+                      bgColor={"white"}
+                      text="Go to Training & Knowledge Base"
+                      borderRadius="10px"
+                      size="md"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

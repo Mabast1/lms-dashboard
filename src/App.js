@@ -67,28 +67,29 @@ const App = () => {
             <div className="navbar static bg-main-bg dark:bg-main-dark-bg ">
               <Navbar />
             </div>
-          </div>
-          <div>
-            <Routes>
-              {/* Dashboard */}
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
 
-              {/* Pages */}
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/lessons" element={<Lessons />} />
-              <Route path="/organizations" element={<Organizations />} />
+            <div>
+              <Routes>
+                {/* Dashboard */}
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
 
-              {/* Apps */}
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/codechampions" element={<CodeCh />} />
+                {/* Pages */}
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/courses" element={<Courses />} />
+                <Route path="/lessons" element={<Lessons />} />
+                <Route path="/organizations" element={<Organizations />} />
 
-              {/* Misc */}
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/knowledgebase" element="knowledge Base" />
-              <Route path="/feedback" element={<Feedback />} />
-            </Routes>
+                {/* Apps */}
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/codechampions" element={<CodeCh />} />
+
+                {/* Misc */}
+                <Route path="/resources" element={<Resources />} />
+                <Route path="/knowledgebase" element="knowledge Base" />
+                <Route path="/feedback" element={<Feedback />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </BrowserRouter>

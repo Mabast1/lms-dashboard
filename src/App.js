@@ -10,7 +10,6 @@ import {
   Sidebar,
   SmallSidebar,
   ThemeSettings,
-  NotFound,
 } from "./components";
 import {
   Dashboard,
@@ -22,6 +21,7 @@ import {
   Lessons,
   Organizations,
   Resources,
+  NotFound,
 } from "./pages";
 import "./App.css";
 import { useStateContext } from "./context/ContextProvider";

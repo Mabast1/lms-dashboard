@@ -10,6 +10,7 @@ import {
   Sidebar,
   SmallSidebar,
   ThemeSettings,
+  NotFound,
 } from "./components";
 import {
   Dashboard,
@@ -88,6 +89,9 @@ const App = () => {
                 <Route path="/resources" element={<Resources />} />
                 <Route path="/knowledgebase" element="knowledge Base" />
                 <Route path="/feedback" element={<Feedback />} />
+
+                {/* 404 Handling */}
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
           </div>

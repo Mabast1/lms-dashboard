@@ -45,30 +45,33 @@ const Dashbord = () => {
           {dashboardButtons.map((item) => (
             <div
               key={item.title}
-              className=" flex flex-col 2xl:w-72 bg-white drop-shadow-sm dark:text-gray-200 dark:bg-secondary-dark-bg md:w-80 p-1 pt-5 rounded-2xl"
+              className=" flex flex-col 2xl:w-80 md:w-72 w-60 bg-white drop-shadow-sm dark:text-gray-200 dark:bg-secondary-dark-bg py-4 rounded-2xl"
             >
-              <div className="flex mb-4 items-center gap-5 px-4">
+              <div className="flex  items-center gap-5 px-4">
                 <div
                   style={{
                     color: item.iconColor,
                     backgroundColor: item.iconBg,
                   }}
-                  className="text-2xl rounded-full p-4 "
+                  className="text-3xl rounded-xl p-4 "
                 >
                   {item.icon}
                 </div>
-                <div>
-                  <p className="text-lg">
-                    <span>{item.count}</span>
-                    <span className="font-semibold ml-2">{item.title}</span>
+
+                <div className="flex flex-col text-lg">
+                  <p>
+                    <span className="text-3xl font-semibold leading-none">
+                      {item.count}
+                    </span>
+                  </p>
+                  <p>
+                    <span className="capitalize">{item.title}</span>
                   </p>
                 </div>
               </div>
 
-              <div className=" text-center border-t-1 border-blue-100 py-3">
-                {/* <p className="text-lg text-black font-semibold mt-1">
-                    {item.title}
-                  </p> */}
+              <div className="text-center border-t-1 border-blue-100 my-3" />
+              <div className="flex justify-center">
                 <Link to={item.path} className="text-blue-800 font-semibold ">
                   <button
                     type="button"

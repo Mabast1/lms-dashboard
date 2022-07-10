@@ -8,3 +8,4 @@ export { default as Resources } from "./Resources";
 export { default as Calendar } from "./Calendar";
 export { default as Feedback } from "./Feedback";
 export { default as NotFound } from "./NotFound";
+export { default as Login } from "./Login";

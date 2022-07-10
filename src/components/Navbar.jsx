@@ -118,15 +118,18 @@ const Navbar = () => {
           onClick={() => handleClick("userProfile")}
           data-tip="Profile"
         >
-          <img
-            src={userProfile.image}
-            className="rounded-full w-9 h-9"
-            alt="avatar"
-          />
+          {userProfile.image && (
+            <img
+              src={userProfile.image}
+              className="rounded-full w-9 h-9"
+              alt="avatar"
+            />
+          )}
+
           <p className="hidden sm:inline-flex">
             <span className="text-gray-800 text-16">Hi, </span>
             <span className="text-gray-800 font-semibold ml-1 text-16">
-              {userProfile.userName}
+              {userProfile.userName.split(" ").slice(0, -1).join(" ")}
             </span>
           </p>
           <MdKeyboardArrowDown className="text-gray-800 text-16" />

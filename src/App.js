@@ -37,7 +37,6 @@ registerLicense(
 const App = () => {
   const { activeMenu, smallActiveMenu } = useStateContext();
   const { userProfile } = useAuthStore();
-  const user = false;
 
   return (
     <GoogleOAuthProvider

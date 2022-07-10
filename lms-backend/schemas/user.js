@@ -5,5 +5,6 @@ export default {
   fields: [
     { name: "userName", title: "User Name", type: "string" },
     { name: "image", title: "Image", type: "string" },
+    { name: "email", title: "Email", type: "string" },
   ],
 };

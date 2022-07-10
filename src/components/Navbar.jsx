@@ -9,6 +9,7 @@ import profile from "../data/profile.png";
 import logo from "../data/logo.jpg";
 import { Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../context/ContextProvider";
+import useAuthStore from "../store/authStore";
 
 const NavButton = ({
   title,
@@ -41,6 +42,7 @@ const NavButton = ({
 );
 
 const Navbar = () => {
+  const { userProfile } = useAuthStore();
   const {
     activeMenu,
     setActiveMenu,
@@ -116,11 +118,15 @@ const Navbar = () => {
           onClick={() => handleClick("userProfile")}
           data-tip="Profile"
         >
-          <img src={profile} className="rounded-full w-9 h-9" alt="avatar" />
+          <img
+            src={userProfile.image}
+            className="rounded-full w-9 h-9"
+            alt="avatar"
+          />
           <p className="hidden sm:inline-flex">
             <span className="text-gray-800 text-16">Hi, </span>
             <span className="text-gray-800 font-semibold ml-1 text-16">
-              Mabast
+              {userProfile.userName}
             </span>
           </p>
           <MdKeyboardArrowDown className="text-gray-800 text-16" />

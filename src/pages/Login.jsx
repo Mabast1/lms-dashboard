@@ -1,20 +1,46 @@
 import React from "react";
-import { GoogleLogin, googleLogout } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 import logo from "../data/logo.jpg";
+import { client } from "../utils/client";
+import useAuthStore from "../store/authStore";
 
 const Login = () => {
+  const { addUser } = useAuthStore();
+
+  const createOrGetUser = async (res, addUser) => {
+    const decoded = jwt_decode(res.credential);
+
+    const { name, picture, sub } = decoded;
+
+    const user = {
+      _id: sub,
+      _type: "user",
+      userName: name,
+      image: picture,
+    };
+
+    addUser(user);
+
+    client.createIfNotExists(user).then((res) => {
+      res.status(200).json("Login successful");
+    });
+  };
   return (
     <div className="flex h-[100vh] justify-center items-center bg-main-bg">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-white dark:bg-gray-900 dark:text-gray-100">
         <div className="flex justify-center">
-          <img src={logo} alt="logo" className="w-32 mb-4" />
+          <a href="/">
+            <img src={logo} alt="logo" className="w-32 mb-4" />
+          </a>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <p className="text-xl font-semibold text-center">Sign In</p>
           <a
             href="/"
-            className="text-md text-center cursor-pointer hover:underline"
+            className="text-sm text-center cursor-pointer hover:underline"
           >
             Create an account
           </a>
@@ -66,7 +92,10 @@ const Login = () => {
         </div>
         <div className="flex justify-center space-x-4">
           <button aria-label="Log in with Google" className="p-3 rounded-sm">
-            <GoogleLogin />
+            <GoogleLogin
+              onSuccess={(res) => createOrGetUser(res, addUser)}
+              onFailure={(err) => console.log(err)}
+            />
           </button>
         </div>
         <p className="text-xs text-center sm:px-6 dark:text-gray-400">

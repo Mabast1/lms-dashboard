@@ -27,6 +27,7 @@ import {
 } from "./pages";
 import "./App.css";
 import { useStateContext } from "./context/ContextProvider";
+import useAuthStore from "./store/authStore";
 
 // Registering Syncfusion license key
 registerLicense(
@@ -35,12 +36,15 @@ registerLicense(
 
 const App = () => {
   const { activeMenu, smallActiveMenu } = useStateContext();
+  const { userProfile } = useAuthStore();
   const user = false;
 
   return (
-    <GoogleOAuthProvider clientId="609808954515-a157vni4lq5fvpprp6l7e8ce5vq0iuur.apps.googleusercontent.com">
+    <GoogleOAuthProvider
+      clientId={process.env.REACT_APP_PUBLIC_GOOGLE_API_TOKEN}
+    >
       <BrowserRouter>
-        {user ? (
+        {userProfile ? (
           <div className="flex relative dark:bg-main-dark-bg">
             <div className="fixed right-4 bottom-4">
               <button
